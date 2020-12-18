@@ -13,8 +13,8 @@ class CreateManagersTable extends Migration
      */
     public function up()
     {
-        Schema::create('manager', function (Blueprint $table) {
-            $table->id();
+        Schema::create('managers', function (Blueprint $table) {
+            $table->increments('id');
             $table->string("name");
             $table->string("phone_number");
             $table->string("address");
@@ -30,6 +30,6 @@ class CreateManagersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manager');
+        Schema::dropIfExists('managers');
     }
 }

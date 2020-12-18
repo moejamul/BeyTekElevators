@@ -13,13 +13,14 @@ class CreateBuildingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('building', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+        Schema::create('buildings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->default(null);
             $table->string('address');
             $table->integer('floors');
             $table->string('contact_number');
-            $table->timestamps();
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateBuildingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('building');
+        Schema::dropIfExists('buildings');
     }
 }

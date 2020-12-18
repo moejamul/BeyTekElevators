@@ -13,8 +13,8 @@ class CreateElevatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('elevator', function (Blueprint $table) {
-            $table->id();
+        Schema::create('elevators', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer("index");
             $table->string("name");
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateElevatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('elevator');
+        Schema::dropIfExists('elevators');
     }
 }
