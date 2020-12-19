@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class BuildingsController extends Controller
 {
-    //
+    public function index(){
+        return "INDEX";
+    }
 }

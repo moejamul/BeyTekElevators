@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BuildingsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('buildings',[BuildingsController::class, 'index']);
+
+// Route::get('/buildings/{id}',function ($id) {
+//     return $id;
+// });
+
+
+
