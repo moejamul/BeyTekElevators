@@ -8,18 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Manager extends Model
 {
     use HasFactory;
-    
-    //table name
-    protected $table="managers";
-    //primary key
-    public $primarykey='id';
-    //remove timestamps
-    public $timestamps = false;
 
-    //Model Relationship with buildings
-    public function building(){
-        //A manager can manage multiple buildings
-        return $this->hasMany(Bulding::class);
-        
+    public $timestamps = false;
+  
+
+    public function buildings()
+    {
+        return $this->belongsToMany(Building::class);
     }
 }

@@ -14,11 +14,11 @@ class CreateManagersTable extends Migration
     public function up()
     {
         Schema::create('managers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string("name");
-            $table->string("phone_number");
-            $table->string("address");
-            $table->string("profile_picture");
+            $table->id();
+            $table->string('name');
+            $table->string('phone_number');
+            $table->string('address');
+            $table->string('profile_picture');
             $table->timestamps();
         });
     }
