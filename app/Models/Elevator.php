@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Elevator extends Model
 {
     use HasFactory;
-
+    protected $table = 'elevators';
     public $timestamps = false;
 
     public function building()
