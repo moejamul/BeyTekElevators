@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\ElevatorController;
+use App\Http\Controllers\ManagerController;
 
 
 /*
@@ -28,6 +29,8 @@ Route::post('/addelevator', [ElevatorController::class, 'add']);
 
 Route::get('/listbuildings/{id?}', [BuildingsController::class, 'list_buildings']);
 Route::get('/listelevators/{id?}', [ElevatorController::class, 'list_elevators']);
+
+Route::get('/updatemanager', [ManagerController::class, 'update']);
 
 // Route::get('/buildings/{id}',function ($id) {
 //     return $id;

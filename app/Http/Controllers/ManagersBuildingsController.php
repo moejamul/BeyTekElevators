@@ -3,35 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Models\Elevator;
+use App\Models\ManagersBuildings;
 use Validator;
 
-class ElevatorController extends Controller
+class ManagersBuildingsController extends Controller
 {
-    
 
-    public function list_elevators($id=null){
+    public function list_managers_buildings($id=null){
 
-        $elevator= $id?Elevator::find($id):Elevator::all();
-        return $elevator;
+        $manbuild= $id?ManagersBuildings::find($id):ManagersBuildings::all();
+        return $manbuild;
 
 
     }
 
     public function search($name){
 
-        return Elevator::where("name","like","%".$name."%")->orWhere("index","like","%".$name."%")->get();
+        return ManagersBuildings::where("building_id","like","%".$name."%")->orWhere("manager_id","like","%".$name."%")->get();
 
 
     }
 
-
     function add(Request $request){
         
         $rules=array(
-            "index"=>"required",
-            "name"=>"required",
+            "manager_id"=>"required",
             "building_id"=>"required",
+            
     
         );
         
@@ -41,10 +39,9 @@ class ElevatorController extends Controller
             
         }else{
            
-        $elevator= new Elevator;
-        $elevator->name= $request->name;
-        $elevator->index= $request->index;
+        $elevator= new ManagersBuildings;
         $elevator->building_id= $request->building_id;
+        $elevator->manager_id= $request->manager_id;
         $result=$elevator->save();
     
         if($result){
@@ -68,7 +65,7 @@ class ElevatorController extends Controller
 
         $rules=array(
             "id"=>"required",
-            "name"=>'required',
+            "manager_id"=>'required',
             "building_id"=>"required",
             
         );
@@ -78,9 +75,9 @@ class ElevatorController extends Controller
             return $validator->errors();
             
         }else{
-            $elevator= Elevator::find($request->id);
-        $elevator->name= $request->name;
-        $elevator->index= $request->index;
+            $elevator= ManagersBuildings::find($request->id);
+        $elevator->id= $request->id;
+        $elevator->manager_id= $request->manager_id;
         $elevator->building_id= $request->building_id;
        
         $result=$elevator->save();
@@ -103,9 +100,10 @@ class ElevatorController extends Controller
         
     }
 
+
     public function delete($id){
 
-        $elevator= Elevator::find($id);
+        $elevator= ManagersBuildings::find($id);
         $result= $elevator->delete();
         if($result){
 
@@ -118,5 +116,5 @@ class ElevatorController extends Controller
 
        
     }
-
+    
 }
