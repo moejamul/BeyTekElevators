@@ -2,24 +2,21 @@
 <form  method="POST" @submit.prevent="submit" style="padding:3em;">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4" >Building Name</label>
-      <input  class="form-control"  v-model="fields.name"  placeholder="Building Name">
+      <label for="inputEmail4" >Elevator Name</label>
+      <input  class="form-control"  v-model="fields.name"  placeholder="Elevator Name">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Floors</label>
-      <input class="form-control"  v-model="fields.floors" placeholder="Floors">
+      <label for="inputPassword4">Index</label>
+      <input class="form-control"  v-model="fields.index" placeholder="Index">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Address</label>
-      <input  class="form-control"  v-model="fields.address" placeholder="Address">
+      <label for="inputEmail4">Building</label>
+      <input  class="form-control"  v-model="fields.building_id" placeholder="building_id">
     </div> 
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Contact Number</label>
-      <input class="form-control"  v-model="fields.contact_number" placeholder="Contact Number">
-    </div>
+
   </div>  
   <button type="submit" class="btn btn-primary">Add</button>
 </form>
@@ -36,7 +33,7 @@
         },
          methods: {
             submit() {
-                axios.post('http://localhost/beytekelevators/public/api/addbuilding', this.fields).then(response => {
+                axios.post('http://localhost/beytekelevators/public/api/addelevator', this.fields).then(response => {
                     this.fields = {};
                     this.success = true;
                     this.errors = {};
