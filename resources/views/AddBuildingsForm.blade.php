@@ -76,7 +76,7 @@
   
   <button type="submit" class="btn btn-primary">Add</button>
 </form> --}}
-<h1> hello from blade </h1>
+
 <app></app>
 {{-- <addbuildingform> </addbuildingform> --}}
 @endsection

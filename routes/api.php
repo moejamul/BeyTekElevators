@@ -6,6 +6,8 @@ use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\ElevatorController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\ManagersBuildingsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +51,10 @@ Route::post('/addmanagersbuildings', [ManagersBuildingsController::class, 'add']
 Route::put('/updatemanagersbuildings', [ManagersBuildingsController::class, 'update']);
 Route::get('/searchmanagersbuildings/{name}', [ManagersBuildingsController::class, 'search']);
 Route::delete('/deletemanagersbuildings/{id}', [ManagersBuildingsController::class, 'delete']);
+
+
+Route::post('/addusers', [UserController::class, 'add']);
+Route::post('/login', [LoginController::class, 'login']);
 
 
 // Route::get('/buildings/{id}', [BuildingsController::class, 'list_buildings_id']);
