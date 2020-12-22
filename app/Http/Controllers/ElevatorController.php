@@ -18,6 +18,11 @@ class ElevatorController extends Controller
 
     }
 
+    public function JoinBuildingsElevators(){
+
+        return Elevator::with(['Building'])->get();
+    }
+
     public function search($name){
 
         return Elevator::where("name","like","%".$name."%")->orWhere("index","like","%".$name."%")->get();

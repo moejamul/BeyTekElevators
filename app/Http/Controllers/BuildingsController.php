@@ -8,11 +8,7 @@ use Validator;
 
 class BuildingsController extends Controller
 {
-    public function index(){
-
-        $building= Building::find(1);
-        return $building;
-    }
+    
 
     public function list_buildings($id=null){
 
@@ -21,6 +17,14 @@ class BuildingsController extends Controller
 
 
     }
+
+    public function JoinBuildingsElevators(){
+
+        return Building::with(['Elevator'])->get();
+    }
+
+
+
 
     public function search($name){
 

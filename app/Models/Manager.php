@@ -14,6 +14,6 @@ class Manager extends Model
 
     public function buildings()
     {
-        return $this->belongsToMany(Building::class);
+        return $this->hasMany(Building::class);
     }
 }

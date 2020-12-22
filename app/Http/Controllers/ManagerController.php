@@ -8,6 +8,13 @@ use Validator;
 
 class ManagerController extends Controller
 {
+
+
+    public function JoinBuildingsManagers(){
+
+        return Manager::with(['Building'])->get();
+
+    }
     public function list_managers($id=null){
 
         $manager= $id?Manager::find($id):Manager::all();
