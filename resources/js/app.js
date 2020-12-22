@@ -16,8 +16,8 @@ window.Vue = require('vue');
 // import test from './components/test.vue';
 // Vue.component('test', require('./components/test.vue'));
 Vue.component(
-    'test',
-    require('./components/test.vue').default
+    'list_buildings_elevators',
+    require('./components/list_buildings_elevators.vue').default
 );
 
 Vue.component(
