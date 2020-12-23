@@ -13,6 +13,9 @@ class ElevatorController extends Controller
     public function list_elevators($id=null){
 
         $elevator= $id?Elevator::find($id):Elevator::all();
+        
+        //if $id is passed, find that specific id, if not get all records
+        
         return $elevator;
 
 
@@ -103,8 +106,7 @@ class ElevatorController extends Controller
 
        
     
-        // return ["result"=>$request->address];
-    
+       
         
     }
 
@@ -118,9 +120,7 @@ class ElevatorController extends Controller
         }else{
             return ["result"=>"delete operation is failed"];
         }
-        // return Building::where("name","like","%".$name."%")->orWhere("address","like","%".$name."%")
-        // ->orWhere("floors","like","%".$name."%")->orWhere("contact_number","like","%".$name."%")->get();
-
+      
        
     }
 

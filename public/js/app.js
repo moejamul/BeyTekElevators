@@ -1925,6 +1925,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1938,6 +1955,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2063,6 +2085,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38136,53 +38160,167 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("Laravel 8 VueJS task ")]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "login" } } }, [
-        _vm._v(" Login")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "register" } } }, [
-        _vm._v(" Register")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
-        _vm._v(" dashboard")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "listbuildings" } } }, [
-        _vm._v(" list Buildings with their Elevators ")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "elevators" } } }, [
-        _vm._v(" List elevators and their Buildings names ")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "managers" } } }, [
-        _vm._v(" list managers ")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "addbuilding" } } }, [
-        _vm._v(" add building ")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "addmanager" } } }, [
-        _vm._v(" add manager ")
-      ]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "addelevator" } } }, [
-        _vm._v(" add elevator ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [_c("router-view")], 1)
-    ],
-    1
-  )
+  return _c("div", [
+    _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarNavAltMarkup" }
+          },
+          [
+            _c("div", { staticClass: "navbar-nav" }, [
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: { name: "listbuildings" } } },
+                    [_vm._v(" list Buildings with their Elevators ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c("router-link", { attrs: { to: { name: "managers" } } }, [
+                    _vm._v(" list managers ")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: { name: "addbuilding" } } },
+                    [_vm._v(" add building ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c("router-link", { attrs: { to: { name: "addmanager" } } }, [
+                    _vm._v(" add manager ")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: { name: "addelevator" } } },
+                    [_vm._v(" add elevator ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link disabled" },
+                [
+                  _c("router-link", { attrs: { to: { name: "elevators" } } }, [
+                    _vm._v(" List elevators and their Buildings names ")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link active" },
+                [
+                  _c("router-link", { attrs: { to: { name: "login" } } }, [
+                    _vm._v(" Login")
+                  ]),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link" },
+                [
+                  _c("router-link", { attrs: { to: { name: "register" } } }, [
+                    _vm._v(" Register")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "nav-item nav-link" },
+                [
+                  _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
+                    _vm._v(" dashboard")
+                  ])
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [_c("router-view")], 1)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand" }, [
+      _c("h1", [_vm._v("Laravel 8 VueJS task ")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarNavAltMarkup",
+          "aria-controls": "navbarNavAltMarkup",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -54406,24 +54544,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // import test from './components/test.vue';
-// Vue.component('test', require('./components/test.vue'));
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Vue.Component is used to define a new component 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('list_buildings_elevators', __webpack_require__(/*! ./components/list_buildings_elevators.vue */ "./resources/js/components/list_buildings_elevators.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('App', __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('addbuildingform', __webpack_require__(/*! ./components/addbuildingform.vue */ "./resources/js/components/addbuildingform.vue")["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: _router__WEBPACK_IMPORTED_MODULE_2__["default"]
+  router: _router__WEBPACK_IMPORTED_MODULE_2__["default"] //importing the routes from ./router.js
+
 });
 
 /***/ }),

@@ -4,6 +4,8 @@
     <div class="form-group col-md-6">
       <label for="inputEmail4" >Manager Name</label>
       <input  class="form-control"  v-model="fields.name"  placeholder="Manager Name">
+      <!-- v-model is used to get the input values, and only works in input elements, fields
+      and it's attributes like "name" that you are seeing above is defined in the script below -->
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Address</label>

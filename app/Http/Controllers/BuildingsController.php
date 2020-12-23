@@ -13,6 +13,8 @@ class BuildingsController extends Controller
     public function list_buildings($id=null){
 
         $buildings= $id?Building::find($id):Building::all();
+        
+        //if $id is passed, find that specific id, if not get all records
         return $buildings;
 
 
@@ -63,9 +65,7 @@ class BuildingsController extends Controller
         }else{
             return ["result"=>"delete operation is failed"];
         }
-        // return Building::where("name","like","%".$name."%")->orWhere("address","like","%".$name."%")
-        // ->orWhere("floors","like","%".$name."%")->orWhere("contact_number","like","%".$name."%")->get();
-
+    
         return ["result"=>"record have been deleted"];
     }
 
@@ -103,7 +103,7 @@ class BuildingsController extends Controller
     
         }
  
-        // return ["result"=>$request->address];
+
     
         
     }
@@ -144,7 +144,7 @@ class BuildingsController extends Controller
 
        
     
-        // return ["result"=>$request->address];
+      
     
         
     }

@@ -4,17 +4,13 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import router from './router';
-import component from './components/App';
+
 
 require('./bootstrap');
 
 window.Vue = require('vue');
 
-
-
-
-// import test from './components/test.vue';
-// Vue.component('test', require('./components/test.vue'));
+// Vue.Component is used to define a new component 
 Vue.component(
     'list_buildings_elevators',
     require('./components/list_buildings_elevators.vue').default
@@ -34,7 +30,7 @@ Vue.component(
 
 var app = new Vue({
     el: '#app',
-    router,
+    router, //importing the routes from ./router.js
    
  });
 
