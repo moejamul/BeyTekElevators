@@ -1942,6 +1942,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1988,6 +2025,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1998,7 +2051,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      axios.post('http://localhost/beytekelevators/public/api/addbuilding', this.fields).then(function (response) {
+      axios.post("http://localhost/beytekelevators/public/api/addbuilding", this.fields).then(function (response) {
         _this.fields = {};
         _this.success = true;
         _this.errors = {};
@@ -2007,7 +2060,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.errors = error.response.data.errors;
         }
 
-        console.log('Error');
+        console.log("Error");
       });
     }
   }
@@ -2049,6 +2102,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2059,7 +2128,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      axios.post('http://localhost/beytekelevators/public/api/addelevator', this.fields).then(function (response) {
+      axios.post("http://localhost/beytekelevators/public/api/addelevator", this.fields).then(function (response) {
         _this.fields = {};
         _this.success = true;
         _this.errors = {};
@@ -2068,7 +2137,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.errors = error.response.data.errors;
         }
 
-        console.log('Error');
+        console.log("Error");
       });
     }
   }
@@ -2115,6 +2184,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2125,7 +2215,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      axios.post('http://localhost/beytekelevators/public/api/addmanager', this.fields).then(function (response) {
+      axios.post("http://localhost/beytekelevators/public/api/addmanager", this.fields).then(function (response) {
         _this.fields = {};
         _this.success = true;
         _this.errors = {};
@@ -2134,7 +2224,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.errors = error.response.data.errors;
         }
 
-        console.log('Error');
+        console.log("Error");
       });
     }
   }
@@ -2179,41 +2269,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       elevators: [],
+      //defining the elevators objects array
       elevator: {
-        id: '',
-        index: '',
-        name: '',
-        building_id: '',
+        //defining the elevators object attributes
+        id: "",
+        index: "",
+        name: "",
+        building_id: "",
         buildings: [],
+        //defining the buildings objects array that is part of the elevator objects array (nested)
         building: {
-          id: '',
-          name: '',
-          floors: '',
-          address: '',
-          contact_number: ''
+          //defining the building object and its attributes
+          id: "",
+          name: "",
+          floors: "",
+          address: "",
+          contact_number: ""
         }
       },
-      elevator_id: ''
+      elevator_id: ""
     };
   },
   created: function created() {
@@ -2224,22 +2302,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var vm = this;
-      page_url = page_url || 'http://localhost/beytekelevators/public/api/elevatorsbuildings';
+      page_url = page_url || "http://localhost/beytekelevators/public/api/elevatorsbuildings"; //fetching the records through API
+
       fetch(page_url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this.elevators = res; //  alert('http://localhost/beytekelevators/public/api/listbuildings/'.concat(res[0].building_id));
+        _this.elevators = res; //passing the response into the elevators object
       });
-    } //     fetchBuilding(page_url) {
-    //      let vm=this;  
-    //  page_url= page_url || 'http://localhost/beytekelevators/public/api/listbuildings'.this.elevators[0].building_id
-    //       fetch(page_url)
-    //         .then(res => res.json())
-    //         .then(res=>{
-    //             alert(res[0].name);
-    //         })
-    //     }
-
+    }
   }
 });
 
@@ -2297,60 +2367,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       buildings: [],
+      //defining the buildings objects array
       building: {
-        id: '',
-        name: '',
-        floors: '',
-        address: '',
-        contact_number: '',
+        //defining the building object and its attributes
+        id: "",
+        name: "",
+        floors: "",
+        address: "",
+        contact_number: "",
         elevators: [],
+        //defining the elevators objects array that is in the building objects array
         elevator: {
-          id: '',
-          index: '',
-          name: '',
-          building_id: ''
+          //defining the elevators object and its attribute
+          id: "",
+          index: "",
+          name: "",
+          building_id: ""
         }
       }
     };
@@ -2363,11 +2399,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var vm = this;
-      page_url = page_url || 'http://localhost/beytekelevators/public/api/buildingselevators';
+      page_url = page_url || "http://localhost/beytekelevators/public/api/buildingselevators"; //fetching the records through API
+
       fetch(page_url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this.buildings = res;
+        _this.buildings = res; //passing the response into the elevators object
       });
     }
   }
@@ -2412,24 +2449,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       managers: [],
+      //defining the Managers objects array
       manager: {
-        id: '',
-        name: '',
-        phone_number: '',
-        address: '',
-        profile_picture: ''
+        //defining the managers object and its attributes
+        id: "",
+        name: "",
+        phone_number: "",
+        address: "",
+        profile_picture: ""
       }
     };
   },
@@ -2441,11 +2472,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var vm = this;
-      page_url = page_url || 'http://localhost/beytekelevators/public/api/listmanagers';
+      page_url = page_url || "http://localhost/beytekelevators/public/api/listmanagers"; //fetching the records through API
+
       fetch(page_url).then(function (res) {
         return res.json();
       }).then(function (res) {
-        _this.managers = res;
+        _this.managers = res; //passing the response into the elevators object
       });
     }
   }
@@ -2483,12 +2515,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: {
-        email: '',
-        password: ''
+        email: "",
+        password: ""
       },
       errors: []
     };
@@ -2497,7 +2537,7 @@ __webpack_require__.r(__webpack_exports__);
     saveForm: function saveForm() {
       var _this = this;
 
-      axios.post('http://localhost/beytekelevators/public/api/login', this.form).then(function () {
+      axios.post("http://localhost/beytekelevators/public/api/login", this.form).then(function () {
         _this.$router.push({
           name: "Dashboard"
         });
@@ -2544,13 +2584,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: {
-        name: '',
-        email: '',
-        password: ''
+        name: "",
+        email: "",
+        password: ""
       },
       errors: []
     };
@@ -2559,8 +2616,8 @@ __webpack_require__.r(__webpack_exports__);
     saveForm: function saveForm() {
       var _this = this;
 
-      axios.post('http://localhost/beytekelevators/public/api/addusers', this.form).then(function () {
-        console.log('saved');
+      axios.post("http://localhost/beytekelevators/public/api/addusers", this.form).then(function () {
+        console.log("saved");
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
       });
@@ -38184,7 +38241,11 @@ var render = function() {
                   _c(
                     "router-link",
                     { attrs: { to: { name: "listbuildings" } } },
-                    [_vm._v(" list Buildings with their Elevators ")]
+                    [
+                      _vm._v(
+                        "\n            list Buildings with their Elevators\n          "
+                      )
+                    ]
                   )
                 ],
                 1
@@ -38195,7 +38256,7 @@ var render = function() {
                 { staticClass: "nav-item nav-link disabled" },
                 [
                   _c("router-link", { attrs: { to: { name: "managers" } } }, [
-                    _vm._v(" list managers ")
+                    _vm._v("\n            list managers\n          ")
                   ])
                 ],
                 1
@@ -38208,7 +38269,7 @@ var render = function() {
                   _c(
                     "router-link",
                     { attrs: { to: { name: "addbuilding" } } },
-                    [_vm._v(" add building ")]
+                    [_vm._v("\n            add building\n          ")]
                   )
                 ],
                 1
@@ -38219,7 +38280,7 @@ var render = function() {
                 { staticClass: "nav-item nav-link disabled" },
                 [
                   _c("router-link", { attrs: { to: { name: "addmanager" } } }, [
-                    _vm._v(" add manager ")
+                    _vm._v("\n            add manager\n          ")
                   ])
                 ],
                 1
@@ -38232,7 +38293,7 @@ var render = function() {
                   _c(
                     "router-link",
                     { attrs: { to: { name: "addelevator" } } },
-                    [_vm._v(" add elevator ")]
+                    [_vm._v("\n            add elevator\n          ")]
                   )
                 ],
                 1
@@ -38243,7 +38304,9 @@ var render = function() {
                 { staticClass: "nav-item nav-link disabled" },
                 [
                   _c("router-link", { attrs: { to: { name: "elevators" } } }, [
-                    _vm._v(" List elevators and their Buildings names ")
+                    _vm._v(
+                      "\n            List elevators and their Buildings names\n          "
+                    )
                   ])
                 ],
                 1
@@ -38277,7 +38340,7 @@ var render = function() {
                 { staticClass: "nav-item nav-link" },
                 [
                   _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
-                    _vm._v(" dashboard")
+                    _vm._v("\n            dashboard")
                   ])
                 ],
                 1
@@ -38297,7 +38360,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "navbar-brand" }, [
-      _c("h1", [_vm._v("Laravel 8 VueJS task ")])
+      _c("h1", [_vm._v("Laravel 8 VueJS task")])
     ])
   },
   function() {
@@ -38793,7 +38856,7 @@ var staticRenderFns = [
     return _c("div", [
       _c("h1", [
         _vm._v(
-          " when login works it redirects to here, this is where all the other components should be in"
+          "\n    when login works it redirects to here, this is where all the other\n    components should be in\n  "
         )
       ])
     ])
@@ -55316,6 +55379,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  //setting up the paths for the components
+  //the names of the components will come into use in App.vue
   routes: [{
     path: '/',
     name: 'listbuildings',

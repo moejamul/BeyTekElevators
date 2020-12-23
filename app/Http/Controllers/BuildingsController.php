@@ -8,19 +8,19 @@ use Validator;
 
 class BuildingsController extends Controller
 {
-    
 
-    public function list_buildings($id=null){
 
-        $buildings= $id?Building::find($id):Building::all();
-        
+    public function list_buildings($id = null)
+    {
+
+        $buildings = $id ? Building::find($id) : Building::all();
+
         //if $id is passed, find that specific id, if not get all records
         return $buildings;
-
-
     }
 
-    public function JoinBuildingsElevators(){
+    public function JoinBuildingsElevators()
+    {
 
         return Building::with(['Elevator'])->get();
     }
@@ -28,130 +28,109 @@ class BuildingsController extends Controller
 
 
 
-    public function search($name){
+    public function search($name)
+    {
 
-        return Building::where("name","like","%".$name."%")->orWhere("address","like","%".$name."%")
-        ->orWhere("floors","like","%".$name."%")->orWhere("contact_number","like","%".$name."%")->get();
-
-
+        return Building::where("name", "like", "%" . $name . "%")->orWhere("address", "like", "%" . $name . "%")
+            ->orWhere("floors", "like", "%" . $name . "%")->orWhere("contact_number", "like", "%" . $name . "%")->get();
     }
 
-    function testdata(Request $request){
+    function testdata(Request $request)
+    {
 
-        $rules=array(
-            "floors"=>"required"
+        $rules = array(
+            "floors" => "required"
         );
-        
-        $validator= Validator::make($request->all(),$rules);
-        if($validator->fails()){
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
             return $validator->errors();
-            
-        }else{
-            return ["Result"=>"validated"];
+        } else {
+            return ["Result" => "validated"];
         }
-        
-
-    }
-
-    
-
-    public function delete($id){
-
-        $building= Building::find($id);
-        $result= $building->delete();
-        if($result){
-
-            return ["result"=>"record has been deleted"];
-        }else{
-            return ["result"=>"delete operation is failed"];
-        }
-    
-        return ["result"=>"record have been deleted"];
     }
 
 
 
-    function add(Request $request){
-        
-        $rules=array(
-            "floors"=>"required",
-            "name"=>'required',
-            "address"=>"required",
-            "contact_number"=>"required"
+    public function delete($id)
+    {
+
+        $building = Building::find($id);
+        $result = $building->delete();
+        if ($result) {
+
+            return ["result" => "record has been deleted"];
+        } else {
+            return ["result" => "delete operation is failed"];
+        }
+
+        return ["result" => "record have been deleted"];
+    }
+
+
+
+    function add(Request $request)
+    {
+
+        $rules = array(
+            "floors" => "required",
+            "name" => 'required',
+            "address" => "required",
+            "contact_number" => "required"
         );
-        
-        $validator= Validator::make($request->all(),$rules);
-        if($validator->fails()){
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
             return $validator->errors();
-            
-        }else{
-           
-        $buildings= new Building;
-        $buildings->name= $request->name;
-        $buildings->address= $request->address;
-        $buildings->floors= $request->floors;
-        $buildings->contact_number= $request->contact_number;
-        $result=$buildings->save();
-    
-        if($result){
-    
-            return ['Result'=>"Data has been saved"];
-        }else{
-    
-            return ['Result'=>"Operation Failed"];
-        }
-    
-        }
- 
+        } else {
 
-    
-        
-    }
+            $buildings = new Building;
+            $buildings->name = $request->name;
+            $buildings->address = $request->address;
+            $buildings->floors = $request->floors;
+            $buildings->contact_number = $request->contact_number;
+            $result = $buildings->save();
 
-    function update(Request $request){
-        
+            if ($result) {
 
-        $rules=array(
-            "id"=>"required",
-            "floors"=>"required",
-            "name"=>'required',
-            "address"=>"required",
-            "contact_number"=>"required"
-        );
-        
-        $validator= Validator::make($request->all(),$rules);
-        if($validator->fails()){
-            return $validator->errors();
-            
-        }else{
-            $buildings= Building::find($request->id);
-            $buildings->name= $request->name;
-            $buildings->address= $request->address;
-            $buildings->floors= $request->floors;
-            $buildings->contact_number= $request->contact_number;
-            $result=$buildings->save();
-        
-            if($result){
-        
-                return ['Result'=>"Data has been saved"];
-            }else{
-        
-                return ['Result'=>"Operation Failed"];
+                return ['Result' => "Data has been saved"];
+            } else {
+
+                return ['Result' => "Operation Failed"];
             }
         }
-        
-
-
-       
-    
-      
-    
-        
     }
 
-    
+    function update(Request $request)
+    {
 
-   
 
-    
+        $rules = array(
+            "id" => "required",
+            "floors" => "required",
+            "name" => 'required',
+            "address" => "required",
+            "contact_number" => "required"
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return $validator->errors();
+        } else {
+            $buildings = Building::find($request->id);
+            $buildings->name = $request->name;
+            $buildings->address = $request->address;
+            $buildings->floors = $request->floors;
+            $buildings->contact_number = $request->contact_number;
+            $result = $buildings->save();
+
+            if ($result) {
+
+                return ['Result' => "Data has been saved"];
+            } else {
+
+                return ['Result' => "Operation Failed"];
+            }
+        }
+    }
 }
